@@ -2,7 +2,12 @@ package com.springsimplespasos.universidad.universidadbackend.modelo.entidades;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.*;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -15,8 +20,15 @@ public class Carrera implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotNull
+    @NotEmpty
+    @Size(min = 0, max = 80)
+    @Pattern(regexp ="")
     @Column(nullable = false, unique = true, length = 80)
     private String nombre;
+
+    //@Positive(message = "El valor no puede ser negativo")
     @Column(name = "cantidad_materias")
     private Integer cantidaMaterias;
     @Column(name = "cantidad_anios")

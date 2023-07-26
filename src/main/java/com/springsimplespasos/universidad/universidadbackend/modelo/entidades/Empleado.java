@@ -1,8 +1,8 @@
 package com.springsimplespasos.universidad.universidadbackend.modelo.entidades;
 
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.enumeradores.TipoEmpleado;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity

@@ -27,7 +27,7 @@ public class UniversidadBackendApplication {
 		}*/
 	}
 
-	@Bean
+	/*@Bean
 	public CommandLineRunner runner(){
 		return args -> {
 			Direccion direccion = new Direccion
@@ -36,5 +36,5 @@ public class UniversidadBackendApplication {
 			Persona save = service.save(alumno);
 			System.out.println(save.toString());
 		};
-	}
+	}*/
 }
