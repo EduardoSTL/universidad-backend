@@ -21,16 +21,12 @@ public class Carrera implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotNull
-    @NotEmpty
-    @Size(min = 0, max = 80)
     @Pattern(regexp ="")
     @Column(nullable = false, unique = true, length = 80)
     private String nombre;
-
     //@Positive(message = "El valor no puede ser negativo")
     @Column(name = "cantidad_materias")
-    private Integer cantidaMaterias;
+    private Integer cantidadMaterias;
     @Column(name = "cantidad_anios")
     private Integer cantidadAnios;
     @Column(name = "fecha_alta")
@@ -55,10 +51,10 @@ public class Carrera implements Serializable {
     public Carrera() {
     }
 
-    public Carrera(Integer id, String nombre, Integer cantidaMaterias, Integer cantidadAnios) {
+    public Carrera(Integer id, String nombre, Integer cantidadMaterias, Integer cantidadAnios) {
         this.id = id;
         this.nombre = nombre;
-        this.cantidaMaterias = cantidaMaterias;
+        this.cantidadMaterias = cantidadMaterias;
         this.cantidadAnios = cantidadAnios;
     }
 
@@ -78,12 +74,12 @@ public class Carrera implements Serializable {
         this.nombre = nombre;
     }
 
-    public Integer getCantidaMaterias() {
-        return cantidaMaterias;
+    public Integer getCantidadMaterias() {
+        return cantidadMaterias;
     }
 
-    public void setCantidaMaterias(Integer cantidaMaterias) {
-        this.cantidaMaterias = cantidaMaterias;
+    public void setCantidadMaterias(Integer cantidaMaterias) {
+        this.cantidadMaterias = cantidaMaterias;
     }
 
     public Integer getCantidadAnios() {
@@ -141,7 +137,7 @@ public class Carrera implements Serializable {
         return "Carrera{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", cantidaMaterias=" + cantidaMaterias +
+                ", cantidaMaterias=" + cantidadMaterias +
                 ", cantidadAnios=" + cantidadAnios +
                 ", fechaAlta=" + fechaAlta +
                 ", fechaModificacion=" + fechaModificacion +
