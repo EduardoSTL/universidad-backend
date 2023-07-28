@@ -11,5 +11,5 @@ import org.mapstruct.MappingTarget;
 @MapperConfig
 public interface EmpleadoMapperConfig {
     @InheritConfiguration(name = "mapPersona")
-    void mapEmpleado(Empleado empleado, @MappingTarget EmpleadoDTO empleadoDTO);
+    void empleadoMap(Empleado empleado, @MappingTarget EmpleadoDTO empleadoDTO);
 }
