@@ -2,17 +2,21 @@ package com.springsimplespasos.universidad.universidadbackend.controlador.dto;
 
 import com.springsimplespasos.universidad.universidadbackend.modelo.dto.AlumnoDTO;
 import com.springsimplespasos.universidad.universidadbackend.modelo.dto.CarreraDTO;
+import com.springsimplespasos.universidad.universidadbackend.modelo.dto.PersonaDTO;
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Alumno;
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
+import com.springsimplespasos.universidad.universidadbackend.modelo.mapper.mapstruck.AlumnoMapper;
 import com.springsimplespasos.universidad.universidadbackend.modelo.mapper.mapstruck.AlumnoMapperConfig;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.AlumnoDAO;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.PersonaDAO;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,23 +26,37 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/alumnos")
 @ConditionalOnProperty(prefix = "app", name = "controller.enable-dto", havingValue = "true")
-public class AlumnoDtoController {
+public class AlumnoDtoController extends PersonaDtoController{
 
-    @Autowired
-    private AlumnoDAO alumnoDAO;
-    @Autowired
-    private AlumnoMapperConfig mapper;
+    public AlumnoDtoController(PersonaDAO service, AlumnoMapper alumnoMapper){
+        super(service, "Alumno", alumnoMapper);
+    }
 
-    /*@GetMapping
-    public ResponseEntity<?> obtenerTodos(){
+    @GetMapping("/{id]")
+    public ResponseEntity<?> obtenerTodos(@PathVariable Integer id){
         Map<String, Object> mensaje = new HashMap<>();
-        List<Alumno> alumnos =(List<Alumno>) alumnoDAO.findAll();
-        List<AlumnoDTO> alumnoDTOS = alumnos
-                .stream()
-                .map(mapper::mapAlumno)
-                .collect(Collectors.toList());
+        PersonaDTO dto = super.buscarPersonaPorId(id);
+        if (dto == null){
+            mensaje.put("success", Boolean.FALSE);
+            mensaje.put("mensaje", String.format("No existe %s con ID %d", nombre_entidad, id));
+            return ResponseEntity.badRequest().body(mensaje);
+        }
         mensaje.put("success", Boolean.TRUE);
-        mensaje.put("data", alumnoDTOS);
+        mensaje.put("data", dto);
         return ResponseEntity.ok(mensaje);
-    }*/
+    }
+
+    @PostMapping
+    public ResponseEntity<?> altaAlumno(@Valid @RequestBody PersonaDTO personaDTO, BindingResult result){
+        Map<String, Object> mensaje = new HashMap<>();
+        if (result.hasErrors()){
+            mensaje.put("success", Boolean.FALSE);
+            mensaje.put("validaciones", super.obtenerValidaciones(result));
+            return ResponseEntity.badRequest().body(mensaje);
+        }
+        PersonaDTO save = super.altaPersona(alumnoMapper.mapAlumno((AlumnoDTO) personaDTO));
+        mensaje.put("success", Boolean.TRUE);
+        mensaje.put("data", save);
+        return ResponseEntity.status(HttpStatus.CREATED).body(mensaje);
+    }
 }

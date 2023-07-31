@@ -13,7 +13,7 @@ public class CarreraDTO {
 
     private Integer codigo;
     @NotNull
-    @NotEmpty
+    @NotEmpty(message = "Debe de ingresar un valor")
     @Size(min = 0, max = 80)
     private String nombre;
     @Positive(message = "El valor no puede ser negativo")
