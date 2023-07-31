@@ -14,5 +14,4 @@ public interface CarreraMapperMS {
             @Mapping(source = "cantidadAnios", target = "cantidad_anios")
     })
     CarreraDTO mapCarrera(Carrera carrera);
-
 }

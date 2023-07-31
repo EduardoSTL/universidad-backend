@@ -5,7 +5,6 @@ import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Ca
 import com.springsimplespasos.universidad.universidadbackend.modelo.mapper.CarreraMapper;
 import com.springsimplespasos.universidad.universidadbackend.modelo.mapper.mapstruck.CarreraMapperMS;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Conditional;
