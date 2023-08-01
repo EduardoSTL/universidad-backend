@@ -5,8 +5,8 @@ import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Al
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", config = AlumnoMapperConfig.class)
-public abstract class AlumnoMapper {
+public interface AlumnoMapper {
 
-    public abstract AlumnoDTO mapAlumno(Alumno alumno);
-    public abstract Alumno mapAlumno(AlumnoDTO alumnoDTO);
+    AlumnoDTO mapAlumno(Alumno alumno);
+    Alumno mapAlumno(AlumnoDTO alumnoDTO);
 }

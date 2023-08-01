@@ -1,17 +1,10 @@
 package com.springsimplespasos.universidad.universidadbackend.controlador.dto;
 
 import com.springsimplespasos.universidad.universidadbackend.modelo.dto.AlumnoDTO;
-import com.springsimplespasos.universidad.universidadbackend.modelo.dto.CarreraDTO;
 import com.springsimplespasos.universidad.universidadbackend.modelo.dto.PersonaDTO;
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Alumno;
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
 import com.springsimplespasos.universidad.universidadbackend.modelo.mapper.mapstruck.AlumnoMapper;
-import com.springsimplespasos.universidad.universidadbackend.modelo.mapper.mapstruck.AlumnoMapperConfig;
-import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.AlumnoDAO;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.PersonaDAO;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/alumnos")
@@ -32,7 +23,7 @@ public class AlumnoDtoController extends PersonaDtoController{
         super(service, "Alumno", alumnoMapper);
     }
 
-    @GetMapping("/{id]")
+    @GetMapping("/{id}")
     public ResponseEntity<?> obtenerTodos(@PathVariable Integer id){
         Map<String, Object> mensaje = new HashMap<>();
         PersonaDTO dto = super.buscarPersonaPorId(id);
