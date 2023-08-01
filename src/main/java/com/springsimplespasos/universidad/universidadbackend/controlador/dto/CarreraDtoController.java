@@ -5,6 +5,8 @@ import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Ca
 import com.springsimplespasos.universidad.universidadbackend.modelo.mapper.CarreraMapper;
 import com.springsimplespasos.universidad.universidadbackend.modelo.mapper.mapstruck.CarreraMapperMS;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Conditional;
@@ -21,6 +23,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/carreras")
 @ConditionalOnProperty(prefix = "app", name = "controller.enable-dto", havingValue = "true")
+@Tag(name = "Acciones relacionadas con carreras", description = "Descripcion de carreras")
 public class CarreraDtoController {
 
     @Autowired
