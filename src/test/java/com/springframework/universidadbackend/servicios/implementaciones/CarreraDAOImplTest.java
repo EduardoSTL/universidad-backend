@@ -1,18 +1,16 @@
-package com.springsimplespasos.universidad.universidadbackend.servicios.implementaciones;
+package com.springframework.universidadbackend.servicios.implementaciones;
 
-import com.springsimplespasos.universidad.universidadbackend.datos.DatosDummy;
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
-import com.springsimplespasos.universidad.universidadbackend.repositorios.CarreraRepository;
-import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
+import com.springframework.universidadbackend.modelo.entidades.Carrera;
+import com.springframework.universidadbackend.repositorios.CarreraRepository;
+import com.springframework.universidadbackend.servicios.contratos.CarreraDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.springsimplespasos.universidad.universidadbackend.datos.DatosDummy.*;
+import static com.springframework.universidadbackend.datos.DatosDummy.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class CarreraDAOImplTest {

@@ -1,11 +1,10 @@
-package com.springsimplespasos.universidad.universidadbackend.datos;
+package com.springframework.universidadbackend.datos;
 
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.*;
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.enumeradores.TipoEmpleado;
+import com.springframework.universidadbackend.modelo.entidades.*;
+import com.springframework.universidadbackend.modelo.entidades.enumeradores.TipoEmpleado;
+import com.springframework.universidadbackend.*;
 
 import java.math.BigDecimal;
-
-import static com.springsimplespasos.universidad.universidadbackend.modelo.entidades.enumeradores.TipoEmpleado.*;
 
 public class DatosDummy {
 
@@ -26,11 +25,11 @@ public class DatosDummy {
     }
 
     public static Persona empleado01() {
-        return new Empleado(null, "Lautaro", "Lopez", "25174036", new Direccion(), new BigDecimal("46750.70"), ADMINISTRATIVO);
+        return new Empleado(null, "Lautaro", "Lopez", "25174036", new Direccion(), new BigDecimal("46750.70"), TipoEmpleado.ADMINISTRATIVO);
     }
 
     public static Persona empleado02() {
-        return new Empleado(null, "Lenadro", "Lopez", "25174630", new Direccion(), new BigDecimal("46750.70"), MANTENIMIENTO);
+        return new Empleado(null, "Lenadro", "Lopez", "25174630", new Direccion(), new BigDecimal("46750.70"), TipoEmpleado.MANTENIMIENTO);
     }
 
     public static Persona profesor01(){

@@ -1,9 +1,8 @@
-package com.springsimplespasos.universidad.universidadbackend.repositorios;
+package com.springframework.universidadbackend.repositorios;
 
-import com.springsimplespasos.universidad.universidadbackend.datos.DatosDummy;
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Empleado;
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Persona;
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Profesor;
+import com.springframework.universidadbackend.modelo.entidades.Empleado;
+import com.springframework.universidadbackend.modelo.entidades.Persona;
+import com.springframework.universidadbackend.modelo.entidades.Profesor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,9 +12,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static com.springsimplespasos.universidad.universidadbackend.datos.DatosDummy.*;
+import static com.springframework.universidadbackend.datos.DatosDummy.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class PersonaRepositoryTest {

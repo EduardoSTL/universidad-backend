@@ -1,7 +1,7 @@
-package com.springsimplespasos.universidad.universidadbackend.repositorios;
+package com.springframework.universidadbackend.repositorios;
 
-import com.springsimplespasos.universidad.universidadbackend.datos.DatosDummy;
-import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
+import com.springframework.universidadbackend.modelo.entidades.Carrera;
+import com.springframework.universidadbackend.datos.DatosDummy;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -9,7 +9,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class CarreraRepositoryTest {

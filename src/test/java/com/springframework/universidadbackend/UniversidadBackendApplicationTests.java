@@ -1,4 +1,4 @@
-package com.springsimplespasos.universidad.universidadbackend;
+package com.springframework.universidadbackend;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
