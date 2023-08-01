@@ -1,8 +1,8 @@
 package com.springframework.universidadbackend.datos;
 
-import com.springframework.universidadbackend.modelo.entidades.*;
-import com.springframework.universidadbackend.modelo.entidades.enumeradores.TipoEmpleado;
+
 import com.springframework.universidadbackend.*;
+import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.*;
 
 import java.math.BigDecimal;
 

@@ -1,7 +1,5 @@
 package com.springframework.universidadbackend.servicios.implementaciones;
 
-import com.springframework.universidadbackend.repositorios.AlumnoRepository;
-import com.springframework.universidadbackend.servicios.contratos.PersonaDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

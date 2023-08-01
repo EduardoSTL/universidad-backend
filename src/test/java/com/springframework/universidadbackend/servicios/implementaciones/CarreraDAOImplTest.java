@@ -1,8 +1,11 @@
 package com.springframework.universidadbackend.servicios.implementaciones;
 
-import com.springframework.universidadbackend.modelo.entidades.Carrera;
-import com.springframework.universidadbackend.repositorios.CarreraRepository;
-import com.springframework.universidadbackend.servicios.contratos.CarreraDAO;
+
+import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
+import com.springsimplespasos.universidad.universidadbackend.repositorios.CarreraRepository;
+import com.springsimplespasos.universidad.universidadbackend.servicios.*;
+import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
+import com.springsimplespasos.universidad.universidadbackend.servicios.implementaciones.CarreraDAOImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
